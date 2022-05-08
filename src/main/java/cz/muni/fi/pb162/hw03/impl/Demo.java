@@ -9,8 +9,12 @@ public class Demo {
      * @param args
      */
     public static void main(String[] args) {
-        String[] argss = {"-i", "C:\\Users\\marti\\Desktop\\pb162\\2022-hw03-csv-sorter\\src\\test\\resources\\010\\data.csv",
-                          "-f", "C:\\Users\\marti\\Desktop\\pb162\\2022-hw03-csv-sorter\\src\\test\\resources\\010\\filters.csv"};
+        String[] argss = {"-i", "C:\\Users\\marti\\Desktop\\pb162\\2022-hw03-csv-sorter\\" +
+                "src\\test\\resources\\010\\data.csv",
+                          "-f", "C:\\Users\\marti\\Desktop\\pb162\\2022-hw03-csv-sorter\\" +
+                "src\\test\\resources\\010\\filters.csv",
+                          "-o", "C:\\Users\\marti\\Desktop\\pb162\\2022-hw03-csv-sorter\\Output"};
         ApplicationRunner.main(argss);
+
     }
 }

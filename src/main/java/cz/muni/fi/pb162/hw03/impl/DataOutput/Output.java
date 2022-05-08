@@ -1,8 +1,7 @@
-package cz.muni.fi.pb162.hw03.impl;
+package cz.muni.fi.pb162.hw03.impl.DataOutput;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -22,11 +21,11 @@ public interface Output {
     void initialize(List<String> header) throws IOException;
 
     /**
-     *
-     * Writes our data specified as a map into the output,
-     *
-     * @param content what data to write
-     * @throws IOException if the writing fails
+     * f
+     * @param line f
+     * @param index f
+     * @throws IOException f
      */
-    void write(Map<String, String> content) throws IOException;
+    void writeIfMatches(List<String> line, int index) throws IOException;
+
 }

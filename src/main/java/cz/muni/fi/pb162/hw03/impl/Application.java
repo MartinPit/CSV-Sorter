@@ -1,11 +1,8 @@
 package cz.muni.fi.pb162.hw03.impl;
 
 import cz.muni.fi.pb162.hw03.cmd.CommandLine;
-import io.github.jcechace.edu.pb162.csv.CsvParser;
-import io.github.jcechace.edu.pb162.csv.CsvToolkit;
 
 import java.io.IOException;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -29,12 +26,8 @@ final class Application {
      * Application runtime logic
      */
     void run() throws IOException {
-        CsvParser parser = CsvToolkit.parser(options.getDelimiter(), options.getCharset());
-        try (var reader = parser.openWithHeader(options.getInput())) {
-            Map<String, String> line;
-            while ((line = reader.read()) != null) {
-                System.out.println(line);
-            }
-        }
+        DataFilterer filterer = new DataFiltererImpl(options.getFilters(), options.getCharset());
+        filterer.filter(options.getInput(), options.getOutput(),
+                        options.getLabelColumn(), options.getDelimiter());
     }
 }
