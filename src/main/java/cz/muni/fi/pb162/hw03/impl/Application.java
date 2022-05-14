@@ -26,8 +26,11 @@ final class Application {
      * Application runtime logic
      */
     void run() throws IOException {
-        DataFilterer filterer = new DataFiltererImpl(options.getFilters(), options.getCharset());
-        filterer.filter(options.getInput(), options.getOutput(),
-                        options.getLabelColumn(), options.getDelimiter());
+        DataFilterer filterer = new DataFiltererImpl(options.getFilters(),
+                                                     options.getCharset(),
+                                                     options.getDelimiter());
+        filterer.filter(options.getInput(),
+                        options.getOutput(),
+                        options.getLabelColumn());
     }
 }
