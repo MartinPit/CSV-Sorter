@@ -76,7 +76,7 @@ public class ApplicationTest {
         if (!",".equals(delimiter)) {
             args.addAll(List.of("-d", delimiter));
         }
-
+        System.out.println(data);
         var stdAndErrOut = runApp(data, filters, output, args.toArray(new String[0]));
         var actual = listDir(output);
         var expected = listDir(exampleOut);

@@ -3,6 +3,7 @@ package cz.muni.fi.pb162.hw03.impl;
 import cz.muni.fi.pb162.hw03.cmd.CommandLine;
 import cz.muni.fi.pb162.hw03.cmd.CommandLineException;
 
+
 /**
  * Note:    While it is possible to modify this class,
  *          it is unlikely that one would need to do so.

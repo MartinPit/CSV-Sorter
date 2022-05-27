@@ -2,6 +2,7 @@ package cz.muni.fi.pb162.hw03.impl;
 
 import cz.muni.fi.pb162.hw03.cmd.CommandLine;
 
+import java.io.IOException;
 import java.util.Objects;
 
 /**
@@ -24,7 +25,12 @@ final class Application {
      *
      * Application runtime logic
      */
-    void run() {
-        throw new UnsupportedOperationException("Implement this method");
+    void run() throws IOException {
+        DataFilterer filterer = new DataFiltererImpl(options.getFilters(),
+                                                     options.getCharset(),
+                                                     options.getDelimiter());
+        filterer.filter(options.getInput(),
+                        options.getOutput(),
+                        options.getLabelColumn());
     }
 }
